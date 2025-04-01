@@ -25,7 +25,7 @@ int main() {
 
     for (int rainha = 0; rainha < 8; rainha ++)
     {
-        printf ("Rainha: Esquerda");
+        printf ("Rainha: Esquerda\n");
     }
     printf ("Rainha moveu-se 8 casas para a esquerda.\n");
 
