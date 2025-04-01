@@ -27,7 +27,18 @@ int main() {
     {
         printf ("Rainha: Esquerda\n");
     }
-    printf ("Rainha moveu-se 8 casas para a esquerda.\n");
+    printf ("Rainha moveu-se 8 casas para a esquerda.\n\n");
+
+    for (int cavEsquerda = 1; cavEsquerda == 1; cavEsquerda ++)
+    {
+        int cavBaixo = 0;
+        while (cavBaixo < 2)
+        {
+            printf ("Cavalo: Baixo.\n");
+            cavBaixo ++;
+        }
+    }   printf ("Cavalo: Esquerda.\n");
+    printf ("O cavalo moveu-se duas casas para baixo e uma para a esquerda.\n\n");
 
     return 0;
 }
