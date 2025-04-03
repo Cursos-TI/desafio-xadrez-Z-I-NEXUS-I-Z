@@ -1,44 +1,53 @@
 #include <stdio.h>
 // Desafio de Xadrez - MateCheck
 
-int torre = 0;
-int bispo = 0;
+// Movimento da Torre
+void moverTorre(int movTorre) {
+    if (movTorre > 0) {
+        printf("Torre: Direita.\n");
+        moverTorre(movTorre - 1);
+    } else {
+        printf("Torre moveu-se cinco casas para a direita.\n\n");
+    }
+}
+
+// Movimento do Bispo
+void moverBispo() {
+    for (int BispoCima = 5; BispoCima > 0; BispoCima--) {
+        printf("Bispo: Cima, direita.\n");
+    }
+    printf("Bispo moveu-se cinco casas na diagonal direita.\n\n");
+}
+
+// Movimento da Rainha
+void moverRainha(int movRainha) {
+    if (movRainha > 0) {
+        printf("Rainha: Esquerda\n");
+        moverRainha(movRainha - 1);
+    } else {
+        printf("Rainha moveu-se 8 casas para a esquerda.\n\n");
+    }
+}
+
+// Movimento do Cavalo
+void moverCavalo(int cavCima) {
+    if (cavCima > 0) {
+        printf("Cavalo: Cima.\n");
+        moverCavalo(cavCima - 1);
+    } else {
+        printf("Cavalo: Direita.\n");
+        printf("Cavalo moveu-se duas casas para cima e uma para a direita.\n\n");
+    }
+}
 
 int main() {
-    
-    // Loops das movimentações das peças
+    int torre = 5, rainha = 8, cavalo = 2;
 
-    while (torre < 5)
-    {
-        printf ("Torre: Direita\n");
-        torre ++;
-    }
-    printf ("Torre moveu-se cinco casas para a direita.\n\n");
-
-    do
-    {
-        printf ("Bispo: Cima, direita\n");
-        bispo ++;
-    }
-    while (bispo < 5);
-    printf ("Bispo moveu-se cinco casas na diagonal direita.\n\n");
-
-    for (int rainha = 0; rainha < 8; rainha ++)
-    {
-        printf ("Rainha: Esquerda\n");
-    }
-    printf ("Rainha moveu-se 8 casas para a esquerda.\n\n");
-
-    for (int cavEsquerda = 1; cavEsquerda == 1; cavEsquerda ++)
-    {
-        int cavBaixo = 0;
-        while (cavBaixo < 2)
-        {
-            printf ("Cavalo: Baixo.\n");
-            cavBaixo ++;
-        }
-    }   printf ("Cavalo: Esquerda.\n");
-    printf ("O cavalo moveu-se duas casas para baixo e uma para a esquerda.\n\n");
+    // Chamada das funções recursivas dos movimentos
+    moverTorre(torre);
+    moverBispo();
+    moverRainha(rainha);
+    moverCavalo(cavalo);
 
     return 0;
 }
